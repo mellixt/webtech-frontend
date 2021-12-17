@@ -6,10 +6,10 @@
       <div class="card h-100">
         <div class="card-body">
           <img src="https://www.voxco.com/wp-content/uploads/2021/09/Opinion-Polls1.png" class="card-img-top" alt="...">
-          <h5 class="card-title">{{ poll.title}} {{ poll.name }}</h5>
+          <h5 class="card-title">{{ poll.title}} {{ poll.username }}</h5>
           <p class="card-text">
-            Der Poll "{{ poll.title }}" von {{ poll.username }} wurde am {{ poll.creationDate }} erstellt und
-            hat {{ poll.options.length }} Optionen.
+            Der Poll "{{ poll.title }}" von {{ poll.username }} wurde am {{ poll.creation_date }} erstellt und
+            hat die Optionen "{{ poll.options}}".
           </p>
         </div>
       </div>
@@ -23,32 +23,22 @@ export default {
   name: 'Polls',
   data () {
     return {
-      polls: [
-        {
-          id: 1,
-          title: 'Wann könnt ihr?',
-          username: 'timtomthomas',
-          creationDate: '12.12.2021',
-          endDate: '18.12.2021',
-          options: [
-            '16.12.21',
-            '17.12.21',
-            '18.12.21'
-          ]
-        },
-        {
-          id: 1,
-          title: 'Wo treffen wir uns?',
-          username: 'timtomthomas',
-          creationDate: '12.12.2021',
-          endDate: '16.12.2021',
-          options: [
-            'draußen',
-            'zuhause'
-          ]
-        }
-      ]
+      polls: []
     }
+  },
+  mounted () {
+    const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/polls'
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    }
+
+    fetch(endpoint, requestOptions)
+      .then(response => response.json())
+      .then(result => result.forEach(poll => {
+        this.polls.push(poll)
+      }))
+      .catch(error => console.log('error', error))
   }
 }
 </script>
