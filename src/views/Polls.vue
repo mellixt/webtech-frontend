@@ -6,7 +6,7 @@
       <div class="card h-100">
         <div class="card-body">
           <img src="https://www.voxco.com/wp-content/uploads/2021/09/Opinion-Polls1.png" class="card-img-top" alt="...">
-          <h5 class="card-title">{{ poll.title}} {{ poll.username }}</h5>
+          <h5 class="card-title">{{ poll.title}} von {{ poll.username }}</h5>
           <p class="card-text">
             Der Poll "{{ poll.title }}" von {{ poll.username }} wurde am {{ poll.creation_date }} erstellt und
             hat die Optionen "{{ poll.options}}".
