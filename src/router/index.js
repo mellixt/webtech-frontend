@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Polls from '../views/Polls'
+import NewPoll from '../views/NewPoll'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/polls',
     name: 'Polls',
     component: Polls
+  },
+  {
+    path: '/newpoll',
+    name: 'New Poll',
+    component: NewPoll
   }
 ]
 

@@ -10,6 +10,7 @@
           <router-link class="nav-link" to="/">Home</router-link>
           <router-link class="nav-link" to="/about">About</router-link>
           <router-link class="nav-link" to="/polls">Polls</router-link>
+          <router-link class="nav-link" to="/newpoll">New Poll</router-link>
         </div>
       </div>
     </div>
