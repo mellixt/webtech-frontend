@@ -18,7 +18,7 @@
         <b>Need a quick way to plan your next meet-up?<br>
           Maybe you want to decide the next location to hang out at?</b><br>
           <br>
-        <router-link to="/polls" tag="button" class="btn btn-outline-success"><b>  GET STARTED NOW </b> </router-link>
+        <router-link to="/newpoll" tag="button" class="btn btn-outline-success"><b>  GET STARTED NOW </b> </router-link>
         <br>
         <br>
         <br>

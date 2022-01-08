@@ -28,7 +28,7 @@ const routes = [
     component: NewPoll
   },
   {
-    path: '/poll/:id',
+    path: '/vote-poll/:id',
     name: 'Poll',
     component: Poll
   },

@@ -8,11 +8,11 @@
           <img src="https://www.voxco.com/wp-content/uploads/2021/09/Opinion-Polls1.png" class="card-img-top" alt="...">
           <h5 class="card-title">{{ poll.title}} von {{ poll.username }}</h5>
           <p class="card-text">
-            Der Poll "{{ poll.title }}" von {{ poll.username }} wurde am {{ poll.creation_date }} erstellt und
+            Der Poll "{{ poll.title }}" von {{ poll.username }} wurde am {{ poll.creationDate }} erstellt und
             hat die Optionen "{{ poll.options}}".
           </p>
           <div class="button-div">
-            <a id="vote-btn" :href="'/poll/'+poll.id">Abstimmen</a>
+            <a id="vote-btn" :href="'/vote-poll/'+poll.id">Abstimmen</a>
             <a id="delete-btn" :href="'/delete/'+poll.id">Löschen</a>
           </div>
         </div>

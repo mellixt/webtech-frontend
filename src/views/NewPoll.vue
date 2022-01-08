@@ -1,28 +1,30 @@
 <template>
   <div class="main">
     <h1>Create a new poll</h1>
-    <form method="POST" action="/">
+    <form action="/" method="POST">
       <div class="form-group">
         <label for="userName">Dein Name</label>
-        <input type="text" class="form-control" id="userName" placeholder="Name eingeben" v-model="username">
+        <input id="userName" v-model="username" class="form-control" placeholder="Name eingeben" type="text">
       </div>
       <div class="form-group">
         <label for="pollTitle">Titel</label>
-        <input type="text" class="form-control" id="pollTitle" placeholder="Titel eingeben" v-model="title">
+        <input id="pollTitle" v-model="title" class="form-control" placeholder="Titel eingeben" type="text">
       </div>
       <div class="form-group">
         <label for="pollOptions">Optionen</label>
-        <input type="text" class="form-control" id="pollOptions" placeholder="Optionen eingeben, durch Komma (,) getrennt" v-model="options">
+        <input id="pollOptions" v-model="options" class="form-control"
+               placeholder="Optionen eingeben, durch Komma (,) getrennt" type="text">
       </div>
       <div class="form-group">
         <label for="startDate">Startdatum</label>
-        <input type="date" class="form-control" id="startDate" v-model="creationDate">
+        <input id="startDate" v-model="creationDate" class="form-control" type="date">
       </div>
       <div class="form-group">
         <label for="endDate">Enddatum</label>
-        <input type="date" class="form-control" id="endDate" placeholder="Enddatum eingeben" v-model="endDate">
+        <input id="endDate" v-model="endDate" class="form-control" placeholder="Enddatum eingeben" type="date">
       </div>
-      <button type="submit" class="btn btn-primary" @click.prevent="createPolls">Submit</button>
+      <!-- <button class="btn btn-primary" type="submit" @click.prevent="createPolls">Submit</button> -->
+      <router-link to="/polls" tag="button" class="btn btn-primary" type="submit" @click.prevent="createPolls"><b> Submit </b> </router-link>
     </form>
   </div>
 </template>
@@ -36,8 +38,8 @@ export default {
       username: '',
       title: '',
       options: '',
-      creation_date: Date.now(),
-      end_date: Date.now()
+      creationDate: Date.now(),
+      endDate: Date.now()
     }
   },
   methods: {
@@ -53,12 +55,26 @@ export default {
 
       const endpoint = process.env.VUE_APP_BACKEND_BASE_URL + '/api/v1/polls'
 
+      // create string with votes set to null depending on number of options
+      let votes = ''
+      let numberOfOptions
+      try {
+        numberOfOptions = this.options.split(',').length
+      } catch (error) {
+        console.error(error)
+      }
+
+      for (let i = 0; i < numberOfOptions; i++) {
+        if (i === 0) { votes += '0' } else votes += ',0'
+      }
+
       const payload = JSON.stringify({
         username: this.username,
         title: this.title,
         options: this.options,
         creationDate: this.creationDate,
-        endDate: this.endDate
+        endDate: this.endDate,
+        votes: votes
       })
 
       const requestOptions = {
@@ -77,10 +93,11 @@ export default {
 </script>
 
 <style scoped>
-  .main {
-    padding: 0px 100px;
-  }
-  .form-group {
-    margin-bottom: 24px;
-  }
+.main {
+  padding: 0px 100px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
 </style>
