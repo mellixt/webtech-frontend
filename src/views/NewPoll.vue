@@ -48,6 +48,18 @@ export default {
       console.log(this.creationDate)
       console.log(this.endDate)
 
+      let voteString = ''
+      const optionQty = this.options.split(',').length
+      for (let i = 0; i < optionQty; i++) {
+        if (i === optionQty - 1) {
+          voteString += '0'
+        } else {
+          voteString += '0,'
+        }
+      }
+
+      console.log(voteString)
+
       const myHeaders = new Headers()
       myHeaders.append('Content-Type', 'application/json')
 
@@ -58,7 +70,8 @@ export default {
         title: this.title,
         options: this.options,
         creationDate: this.creationDate,
-        endDate: this.endDate
+        endDate: this.endDate,
+        votes: voteString
       })
 
       const requestOptions = {

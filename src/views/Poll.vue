@@ -6,8 +6,10 @@
     </div>
     <div class="options__container">
       <p>Stimme jetzt ab:</p>
-      <div class="option" v-for="option in options" :key="option">
-        <h3>{{ option }}</h3>
+
+      <div class="option" v-for="idx in sPoll.options.split(',').length" :key="idx">
+        <h3 class="optionText">{{ sPoll.options.split(',')[idx - 1] }}</h3>
+        <p class="votes">{{ sPoll.votes.split(',')[idx - 1] }} Stimmen</p>
       </div>
     </div>
   </div>
@@ -18,8 +20,7 @@ export default {
   name: 'Poll',
   data () {
     return {
-      poll: [],
-      options: []
+      poll: []
     }
   },
   mounted () {
@@ -34,7 +35,6 @@ export default {
         console.log(data)
         this.poll.push(data)
         console.log(this.poll[0])
-        this.options = this.poll[0].options.split(',')
       })
     })
   }
@@ -58,5 +58,11 @@ export default {
 }
 .option {
   padding: 6px 0px;
+}
+.optionText {
+  text-transform: capitalize;
+}
+.votes {
+  text-align: left;
 }
 </style>
