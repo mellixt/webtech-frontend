@@ -3,6 +3,8 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Polls from '../views/Polls'
 import NewPoll from '../views/NewPoll'
+import Poll from '../views/Poll'
+import Delete from '../views/Delete'
 
 const routes = [
   {
@@ -24,6 +26,16 @@ const routes = [
     path: '/newpoll',
     name: 'New Poll',
     component: NewPoll
+  },
+  {
+    path: '/poll/:id',
+    name: 'Poll',
+    component: Poll
+  },
+  {
+    path: '/delete/:id',
+    name: 'Delete',
+    component: Delete
   }
 ]
 

@@ -11,6 +11,10 @@
             Der Poll "{{ poll.title }}" von {{ poll.username }} wurde am {{ poll.creation_date }} erstellt und
             hat die Optionen "{{ poll.options}}".
           </p>
+          <div class="button-div">
+            <a id="vote-btn" :href="'/poll/'+poll.id">Abstimmen</a>
+            <a id="delete-btn" :href="'/delete/'+poll.id">Löschen</a>
+          </div>
         </div>
       </div>
     </div>
@@ -43,5 +47,21 @@ export default {
 }
 </script>
 <style scoped>
-
+.button-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#vote-btn {
+  padding: 6px;
+  background: lightblue;
+  border-radius: 6px;
+  border: none;
+}
+#delete-btn {
+  background: transparent;
+  border: none;
+  color: red;
+  padding: 6px;
+}
 </style>

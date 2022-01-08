@@ -16,11 +16,11 @@
       </div>
       <div class="form-group">
         <label for="startDate">Startdatum</label>
-        <input type="date" class="form-control" id="startDate" v-model="creation_date">
+        <input type="date" class="form-control" id="startDate" v-model="creationDate">
       </div>
       <div class="form-group">
         <label for="endDate">Enddatum</label>
-        <input type="date" class="form-control" id="endDate" placeholder="Enddatum eingeben" v-model="end_date">
+        <input type="date" class="form-control" id="endDate" placeholder="Enddatum eingeben" v-model="endDate">
       </div>
       <button type="submit" class="btn btn-primary" @click.prevent="createPolls">Submit</button>
     </form>
@@ -45,8 +45,8 @@ export default {
       console.log(this.username)
       console.log(this.title)
       console.log(this.options)
-      console.log(this.creation_date)
-      console.log(this.end_date)
+      console.log(this.creationDate)
+      console.log(this.endDate)
 
       const myHeaders = new Headers()
       myHeaders.append('Content-Type', 'application/json')
@@ -57,8 +57,8 @@ export default {
         username: this.username,
         title: this.title,
         options: this.options,
-        creation_date: this.creation_date,
-        end_date: this.end_date
+        creationDate: this.creationDate,
+        endDate: this.endDate
       })
 
       const requestOptions = {
