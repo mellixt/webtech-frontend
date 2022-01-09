@@ -107,7 +107,6 @@ h1 {
 .form__container {
   display: flex;
   justify-content: center;
-  width: 70%;
 }
 label {
   margin-bottom: 6px;
