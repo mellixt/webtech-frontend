@@ -17,9 +17,9 @@
         <input id="pollOptions" v-model="options" class="form-control"
                placeholder="Insert options, please separate options by comma (,)" type="text">
       </div>
-      <div class="form-group">
+      <div class="form-group" style="display: none;">
         <label for="startDate">Start date</label>
-        <input id="startDate" style="display: none;" v-model="creationDate" class="form-control" type="date">
+        <input id="startDate" v-model="creationDate" class="form-control" type="date">
       </div>
       <div class="form-group">
         <label for="endDate">End date</label>
