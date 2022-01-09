@@ -10,7 +10,7 @@
       <div class="option" v-for="option in pollOptions" :key="option">
         <input type="radio" id="one" name="optionRadios" v-bind:value=option v-model="chosen"> {{ option }}
       </div>
-      <router-link to="/polls" tag="button" class="btn btn-primary " type="submit" @click.prevent="vote"><b> Submit </b> </router-link>
+      <router-link to="/" tag="button" class="btn btn-primary " type="submit" @click.prevent="vote"><b> Submit </b> </router-link>
       <br>
     <span class="badge bg-success" @mouseover="hover = true" @mouseleave="hover = false" >
       ERGEBNISSE
