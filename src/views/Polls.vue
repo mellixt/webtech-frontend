@@ -48,7 +48,8 @@ export default {
 </script>
 <style scoped>
 h1 {
-  padding-top: 24px
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 .button-div {
   display: flex;

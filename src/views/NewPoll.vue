@@ -98,12 +98,15 @@ export default {
 
 <style scoped>
 h1 {
-  padding-top: 24px
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 .main {
   padding: 0px 100px;
 }
 .form__container {
+  display: flex;
+  justify-content: center;
   width: 70%;
 }
 label {
