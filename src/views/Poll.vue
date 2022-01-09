@@ -15,10 +15,10 @@
     <span class="badge bg-success" @mouseover="hover = true" @mouseleave="hover = false" >
       ERGEBNISSE
     </span>
-      <table v-if="hover"  align="left" class="table-bordered">f
+      <table v-if="hover"  align="left" class="table-bordered">
          <tr>
            <th> Option </th>
-           <th> Stimmen </th>
+           <th> Vote </th>
          </tr>
           <tr v-for="(option, index) in pollOptions" :key="option">
             <th> {{ option }} </th>
