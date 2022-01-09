@@ -38,8 +38,8 @@ export default {
       username: '',
       title: '',
       options: '',
-      creationDate: Date.now(),
-      endDate: Date.now()
+      creationDate: new Date(),
+      endDate: new Date()
     }
   },
   methods: {
@@ -72,8 +72,8 @@ export default {
         username: this.username,
         title: this.title,
         options: this.options,
-        creationDate: this.creationDate,
-        endDate: this.endDate,
+        creationDate: (new Date(this.creationDate)).toLocaleDateString('de-DE'),
+        endDate: (new Date(this.endDate)).toLocaleDateString('de-DE'),
         votes: votes
       })
 

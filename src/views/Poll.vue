@@ -5,12 +5,26 @@
       <p>von {{ sPoll.username }}</p>
     </div>
     <div class="options__container">
+      <br>
       <p>Stimme jetzt ab:</p>
-      <div class="option" v-for="option in options" :key="option">
+      <div class="option" v-for="option in pollOptions" :key="option">
         <input type="radio" id="one" name="optionRadios" v-bind:value=option v-model="chosen"> {{ option }}
       </div>
-      <router-link to="/polls" tag="button" class="btn btn-primary" type="submit" @click.prevent="vote"><b> Submit </b> </router-link>
-      You have selected : {{optionRadios}}
+      <router-link to="/polls" tag="button" class="btn btn-primary " type="submit" @click.prevent="vote"><b> Submit </b> </router-link>
+      <br>
+    <span class="badge bg-success" @mouseover="hover = true" @mouseleave="hover = false" >
+      ERGEBNISSE
+    </span>
+      <table v-if="hover"  align="left" class="table-bordered">
+         <tr>
+           <th> Option </th>
+           <th> Stimmen </th>
+         </tr>
+          <tr v-for="(option, index) in pollOptions" :key="option">
+            <th> {{ option }} </th>
+            <th>{{ votes[index] }} </th>
+          </tr>
+      </table>
     </div>
   </div>
 </template>
@@ -20,8 +34,10 @@ export default {
   name: 'Poll',
   data () {
     return {
+      // our vars
+      hover: false,
       poll: [],
-      options: [],
+      pollOptions: [],
       votes: [],
       chosen: ''
     }
@@ -38,7 +54,7 @@ export default {
         // console.log(data)
         this.poll.push(data)
         // console.log(this.poll)
-        this.options = this.poll[0].options.split(',')
+        this.pollOptions = this.poll[0].options.split(',')
         this.votes = this.poll[0].votes.split(',')
           .map(number => parseInt(number, 10))
       })
@@ -47,7 +63,7 @@ export default {
   methods: {
     vote () {
       // rauskriegen welche option gewählt wurde und dementsprechend um 1 erhöhen
-      const numberOfOption = this.options.findIndex(element => element === this.chosen)
+      const numberOfOption = this.pollOptions.findIndex(element => element === this.chosen)
 
       // um 1 erhöhen
       this.votes[numberOfOption] += 1
@@ -97,7 +113,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 10vh;
 }
 .option {
   padding: 6px 0px;

@@ -3,7 +3,6 @@
     <br>
     <br>
     <br>
-    <br>
     <div style="width: 100%; float:left">
       <img src="https://images-na.ssl-images-amazon.com/images/I/51cOM2ZPaoL.png" style="width:13%" alt="...">
       <br>
