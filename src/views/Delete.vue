@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <h1>Poll successfully deleted.</h1>
-    <a href="/polls">Go back to your polls</a>
+    <a href="/">Go back to your polls</a>
   </div>
 </template>
 
