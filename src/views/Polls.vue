@@ -6,7 +6,6 @@
    <div class="col" v-for="poll in polls" :key="poll.id">
       <div class="card h-100">
         <div class="card-body">
-          <img src="https://www.voxco.com/wp-content/uploads/2021/09/Opinion-Polls1.png" class="card-img-top" alt="...">
           <h5 class="card-title" align="left"> <b>{{ poll.title}}</b></h5>
           <p class="card-text" align="left">
             Created by: {{ poll.username }}<br>

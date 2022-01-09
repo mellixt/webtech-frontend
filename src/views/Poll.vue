@@ -13,7 +13,7 @@
       <router-link to="/" tag="button" class="btn btn-primary " type="submit" @click.prevent="vote"><b> Submit </b> </router-link>
       <br>
     <span class="badge bg-success" @mouseover="hover = true" @mouseleave="hover = false" >
-      ERGEBNISSE
+      RESULTS
     </span>
       <table v-if="hover"  align="left" class="table-bordered">
          <tr>

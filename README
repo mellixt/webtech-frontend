@@ -1,0 +1,21 @@
+Willkommen bei der My Poll App.
+
+LANDINGPAGE
+Sie befinden sich in der Übersicht für alle bereits erstellten Umfragen.
+Klicken Sie auf 'Delete', um eine Umfrage zu entfernen.
+Klicken Sie auf 'Vote', um an einer Abstimmung teilzunehmen.
+
+VOTE
+Haben Sie sich für 'Vote' entschieden, öffnet sich die individuelle Seite der Umfrage.
+Hier können Sie nun abstimmen, indem Sie eine Option auswählen und auf 'Submit' drücken.
+Jederzeit können die Ergebnisse der Abstimmung eingesehen werden, wenn über 'RESULTS' gehovert wird.
+Darüber hinaus kann der Link der Umfrage über 'Share this Poll' kopiert werden, um diese anschließend einfach zu teilen.
+
+NEW POLL
+Über den Menüpunkt 'New Poll' kann eine neue Umfrage angelegt werden.
+Dafür muss der Benutzer verschiedene Informationen angeben:
+- den Namen des Erstellers
+- den Titel der Umfrage
+- die möglichen Optionen der Umfrage (per Komma (,) getrennt)
+- das Enddatum
+Über den 'Submit'-Button wird die Umfrage angelegt.
