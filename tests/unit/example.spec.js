@@ -1,7 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import NavBar from '@/components/NavBar.vue'
-import Polls from '@/views/Polls.vue'
-import Vue from 'vue'
+import NavBar from '@/components/Navbar.vue'
 
 describe('NavBar.vue', () => {
   it('renders props.msg when passed', () => {
@@ -10,13 +8,5 @@ describe('NavBar.vue', () => {
       props: { msg }
     })
     expect(wrapper.text()).toMatch(msg)
-  })
-})
-describe('Polls.vue', () => {
-  it('checks if polls exist', () => {
-    // build component
-    const Constructor = Vue.extend(Polls)
-    const PollsComponent = new Constructor().$mount()
-    expect(PollsComponent)
   })
 })
