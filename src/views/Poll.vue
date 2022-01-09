@@ -25,6 +25,8 @@
             <th>{{ votes[index] }} </th>
           </tr>
       </table>
+      <br>
+      <button type="button" class="btn-clipboard" title="" data-bs-original-title="Copy to clipboard"  @click.prevent="copyURL">Teile deine Umfrage</button>
     </div>
   </div>
 </template>
@@ -94,8 +96,15 @@ export default {
 
       fetch(endpoint, requestOptions)
         .catch(error => console.log('error', error))
-    }
+    },
+    copyURL () {
+      const copyText = 'localhost:3000/vote-poll/' + this.$route.params.id
+      /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText)
 
+      /* Alert the copied text */
+      alert('Copied the text: ' + copyText)
+    }
   }
 }
 </script>

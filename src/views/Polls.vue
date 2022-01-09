@@ -1,5 +1,6 @@
 <template>
   <h1>Welcome to your Polls</h1>
+  <p style="color:#E1E1E1 ; font-size:80%;" ><b>Image from:</b> https://www.voxco.com/wp-content/uploads/2021/09/Opinion-Polls1.png</p>
   <div class="container-fluid">
   <div class="row row-cols-1 row-cols-md-4 g-4">
    <div class="col" v-for="poll in polls" :key="poll.id">
@@ -8,13 +9,13 @@
           <img src="https://www.voxco.com/wp-content/uploads/2021/09/Opinion-Polls1.png" class="card-img-top" alt="...">
           <h5 class="card-title" align="left"> <b>{{ poll.title}}</b></h5>
           <p class="card-text" align="left">
-            Erstellt von: {{ poll.username }}<br>
-            Erstellt am: {{ poll.creationDate }}<br>
-            Optionen: "{{ poll.options}}".
+            Created by: {{ poll.username }}<br>
+            Date: {{ poll.creationDate }}<br>
+            Options: "{{ poll.options}}".
           </p>
           <div class="button-div">
-            <a id="vote-btn" :href="'/vote-poll/'+poll.id">Abstimmen</a>
-            <a id="delete-btn" :href="'/delete/'+poll.id">Löschen</a>
+            <a id="vote-btn" :href="'/vote-poll/'+poll.id">Vote</a>
+            <a id="delete-btn" :href="'/delete/'+poll.id">Delete</a>
           </div>
         </div>
       </div>

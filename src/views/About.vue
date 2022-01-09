@@ -6,8 +6,7 @@
     <div style="width: 100%; float:left">
       <img src="https://images-na.ssl-images-amazon.com/images/I/51cOM2ZPaoL.png" style="width:13%" alt="...">
       <br>
-      <br>
-      <p style="color:#F1F1F1 ; font-size:80%;" ><b>Image from:</b> https://images-na.ssl-images-amazon.com/images/I/51cOM2ZPaoL.png</p>
+      <p style="color:#E1E1E1 ; font-size:80%;" ><b>Image from:</b> https://images-na.ssl-images-amazon.com/images/I/51cOM2ZPaoL.png</p>
     </div>
     <div style="width: 100%; float:right">
       <textbox>

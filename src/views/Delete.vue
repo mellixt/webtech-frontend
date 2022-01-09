@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <h1>Umfrage wurde gelöscht.</h1>
-    <a href="/polls">Zurück zu allen Umfragen</a>
+    <h1>Poll successfully deleted.</h1>
+    <a href="/polls">Go back to your polls</a>
   </div>
 </template>
 
