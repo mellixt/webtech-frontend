@@ -107,11 +107,15 @@ h1 {
 .form__container {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 label {
   margin-bottom: 6px;
 }
 .form-group {
   margin-bottom: 24px;
+}
+form {
+  width: 100%;
 }
 </style>
