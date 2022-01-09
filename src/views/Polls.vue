@@ -1,6 +1,5 @@
 <template>
-  <h1>Welcome to your Polls</h1>
-  <p style="color:#E1E1E1 ; font-size:80%;" ><b>Image from:</b> https://www.voxco.com/wp-content/uploads/2021/09/Opinion-Polls1.png</p>
+  <h1>Active polls</h1>
   <div class="container-fluid">
   <div class="row row-cols-1 row-cols-md-4 g-4">
    <div class="col" v-for="poll in polls" :key="poll.id">
@@ -48,6 +47,9 @@ export default {
 }
 </script>
 <style scoped>
+h1 {
+  padding-top: 24px
+}
 .button-div {
   display: flex;
   align-items: center;
