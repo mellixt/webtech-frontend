@@ -9,7 +9,6 @@
       <p style="color:#E1E1E1 ; font-size:80%;" ><b>Image from:</b> https://images-na.ssl-images-amazon.com/images/I/51cOM2ZPaoL.png</p>
     </div>
     <div style="width: 100%; float:right">
-      <textbox>
         <br>
         <br>
         <h1><b>About Us</b></h1><br>
@@ -26,7 +25,6 @@
         You can create a simple poll and share the link with<br>
         your friends or collegues in question.<br>
         </span>
-      </textbox>
-    </div>
+      </div>
   </div>
 </template>

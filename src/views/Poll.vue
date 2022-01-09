@@ -15,7 +15,7 @@
     <span class="badge bg-success" @mouseover="hover = true" @mouseleave="hover = false" >
       ERGEBNISSE
     </span>
-      <table v-if="hover"  align="left" class="table-bordered">
+      <table v-if="hover"  align="left" class="table-bordered">f
          <tr>
            <th> Option </th>
            <th> Stimmen </th>
@@ -98,7 +98,7 @@ export default {
         .catch(error => console.log('error', error))
     },
     copyURL () {
-      const copyText = 'localhost:3000/vote-poll/' + this.$route.params.id
+      const copyText = process.env.VUE_APP_FRONTEND_BASE_URL + '/vote-poll/' + this.$route.params.id
       /* Copy the text inside the text field */
       navigator.clipboard.writeText(copyText)
 

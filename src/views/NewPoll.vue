@@ -26,7 +26,7 @@
         <input id="endDate" v-model="endDate" class="form-control" placeholder="Enddatum eingeben" type="date">
       </div>
       <!-- <button class="btn btn-primary" type="submit" @click.prevent="createPolls">Submit</button> -->
-      <router-link to="/polls" tag="button" class="btn btn-primary" type="submit" @click.prevent="createPolls"><b> Submit </b> </router-link>
+      <router-link to="/" tag="button" class="btn btn-primary" type="submit" @click.prevent="createPolls"><b> Submit </b> </router-link>
     </form>
   </div>
 </template>

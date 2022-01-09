@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Polls from '../views/Polls'
 import NewPoll from '../views/NewPoll'
@@ -9,18 +8,13 @@ import Delete from '../views/Delete'
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Polls',
+    component: Polls
   },
   {
     path: '/about',
     name: 'About',
     component: About
-  },
-  {
-    path: '/polls',
-    name: 'Polls',
-    component: Polls
   },
   {
     path: '/newpoll',
